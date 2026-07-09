@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=PanelCarretera
+comment1.params=
+comment1.target=PanelCarretera()
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+numComments=3

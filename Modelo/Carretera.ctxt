@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Carretera
+comment1.params=
+comment1.target=Carretera()
+comment10.params=carrosCamino3
+comment10.target=void\ setCarrosCamino3(java.util.ArrayList)
+comment11.params=carrosCamino4
+comment11.target=void\ setCarrosCamino4(java.util.ArrayList)
+comment2.params=
+comment2.target=java.util.ArrayList\ getSemaforos()
+comment3.params=
+comment3.target=java.util.ArrayList\ getCarrosCamino1()
+comment4.params=
+comment4.target=java.util.ArrayList\ getCarrosCamino2()
+comment5.params=
+comment5.target=java.util.ArrayList\ getCarrosCamino3()
+comment6.params=
+comment6.target=java.util.ArrayList\ getCarrosCamino4()
+comment7.params=semaforos
+comment7.target=void\ setSemaforos(java.util.ArrayList)
+comment8.params=carrosCamino1
+comment8.target=void\ setCarrosCamino1(java.util.ArrayList)
+comment9.params=carrosCamino2
+comment9.target=void\ setCarrosCamino2(java.util.ArrayList)
+numComments=12

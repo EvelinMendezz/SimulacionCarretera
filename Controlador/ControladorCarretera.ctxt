@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ControladorCarretera
+comment1.params=modelo\ vista
+comment1.target=ControladorCarretera(Modelo.Carretera,\ Vista.VentanaPrincipal)
+comment2.params=
+comment2.target=void\ iniciarSimulacion()
+numComments=3

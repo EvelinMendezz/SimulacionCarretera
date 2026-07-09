@@ -28,7 +28,7 @@ public class Carretera
         carrosCamino4 = new ArrayList<>();
     }
 
-    // --- GETTERS ---
+    //GETTERS
 
     public ArrayList<Semaforo> getSemaforos() {
         return semaforos;
@@ -50,7 +50,7 @@ public class Carretera
         return carrosCamino4;
     }
     
-    // --- SETTERS (Opcionales, por si necesitan reescribir la lista completa) ---
+    //SETTERS
     
     public void setSemaforos(ArrayList<Semaforo> semaforos) {
         this.semaforos = semaforos;

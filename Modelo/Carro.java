@@ -12,7 +12,7 @@ public class Carro
     private int x;
     private int y;
     private int velocidad;
-    private int caminoId; // A qué camino pertenece (1 al 4)
+    private int caminoId;
     private String estado; // "ESPERANDO", "CRUZANDO", "PASADO"
 
     public Carro(int x, int y, int velocidad, int caminoId) {
@@ -43,7 +43,7 @@ public class Carro
         }
     }
 
-    // Getters y Setters necesarios
+    // Getters y Setters
     public int getX() {
         return x;
     }

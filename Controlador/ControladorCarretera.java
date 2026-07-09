@@ -15,16 +15,16 @@ public class ControladorCarretera
 {
     private Carretera modelo;
     private VentanaPrincipal vista;
-    private Object candado; // Objeto monitor para la sincronización
+    private Object candado;
     private Object candadoAnimacion;
-    private int turnoActual; // Indica qué semáforo (1, 2, 3 o 4) tiene permiso de estar en verde
+    private int turnoActual;
 
     public ControladorCarretera(Carretera modelo, VentanaPrincipal vista) {
         this.modelo = modelo;
         this.vista = vista;
         this.candado = new Object();
         this.candadoAnimacion = new Object();
-        this.turnoActual = 1; // Empieza el camino 1
+        this.turnoActual = 1;
     }
 
     public void iniciarSimulacion() {
@@ -36,7 +36,7 @@ public class ControladorCarretera
         }
     }
 
-    // Clase interna que define el comportamiento de cada uno de los 4 hilos
+    // Clase que define el comportamiento de cada hilo
     private class HiloCamino implements Runnable {
         private int idCamino;
 
@@ -57,14 +57,14 @@ public class ControladorCarretera
                         }
                     }
 
-                    // --- INICIA EL TURNO DE ESTE CAMINO ---
-                    System.out.println("Camino " + idCamino + " en VERDE.");
+                    //INICIA EL TURNO DE ESTE CAMINO
+                    //System.out.println("Camino " + idCamino + " en VERDE.");
                     modelo.getSemaforos().get(idCamino - 1).setColor("VERDE");
                     
-                    // Lógica para crear los 3 carros
+                    //crear los 3 carros
                     for (int i = 0; i < 3; i++) {
-                        // Las coordenadas exactas (x, y) dependerán del idCamino. 
-                        // Por ahora ponemos variables temporales (0, 0)
+                        //dependerán del idCamino. 
+                        //variables temporales (0, 0)
                         int coordX = 0; 
                         int coordY = 0;
                         int separacion = i * 60;
@@ -89,7 +89,7 @@ public class ControladorCarretera
                         }
                         
                         Carro nuevoCarro = new Carro(coordX, coordY, 5, idCamino);
-                        // Cuando nacen, les damos permiso inmediato para cruzar porque su luz es verde
+                        // Cuando nacen les damos permiso  para cruzar porque su luz es verde
                         nuevoCarro.setEstado("CRUZANDO");
                         
                         // Guardamos el carro en la lista correcta del modelo
@@ -108,14 +108,14 @@ public class ControladorCarretera
                     // Le ordenamos a la vista que actualice las imágenes
                     vista.getPanelCarretera().actualizarPantalla(c1, c2, c3, c4, null);
 
-                    // El semáforo se queda en verde por 10 segundos obligatoriamente usando wait
+                    // El semáforo se queda en verde por 10 segundos
                     try {
                         candado.wait(10000); 
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
 
-                    // --- TERMINA EL TURNO ---
+                    //TERMINA EL TURNO
                     modelo.getSemaforos().get(idCamino - 1).setColor("ROJO");
 
                     // Se repite la extracción para actualizar la vista a rojo antes de ceder el turno

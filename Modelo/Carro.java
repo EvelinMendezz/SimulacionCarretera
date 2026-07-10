@@ -14,13 +14,16 @@ public class Carro
     private int velocidad;
     private int caminoId;
     private String estado; // "ESPERANDO", "CRUZANDO", "PASADO"
+    
+    private String direccion;
 
-    public Carro(int x, int y, int velocidad, int caminoId) {
+    public Carro(int x, int y, int velocidad, int caminoId, String direccion) {
         this.x = x;
         this.y = y;
         this.velocidad = velocidad;
         this.caminoId = caminoId;
         this.estado = "ESPERANDO";
+        this.direccion= direccion;
     }
 
     public void avanzar() {
@@ -28,16 +31,32 @@ public class Carro
         if (estado.equals("CRUZANDO")) {
             switch (caminoId) {
                 case 1: // Viene del Norte, baja hacia el Sur
-                    y += velocidad;
+                    if (direccion.equals("DERECHA") && y >= 330) {
+                        x -= velocidad; // Gira hacia el Oeste
+                    } else {
+                        y += velocidad; // Sigue derecho al Sur
+                    }
                     break;
                 case 2: // Viene del Este, va hacia el Oeste
-                    x -= velocidad;
+                    if (direccion.equals("DERECHA") && x <= 430) {
+                        y -= velocidad; // Gira hacia el Norte
+                    } else {
+                        x -= velocidad; // Sigue derecho al Oeste
+                    }
                     break;
                 case 3: // Viene del Sur, sube hacia el Norte
-                    y -= velocidad;
+                    if (direccion.equals("DERECHA") && y <= 430) {
+                        x += velocidad; // Gira hacia el Este
+                    } else {
+                        y -= velocidad; // Sigue derecho al Norte
+                    }
                     break;
                 case 4: // Viene del Oeste, va hacia el Este
-                    x += velocidad;
+                    if (direccion.equals("DERECHA") && x >= 330) {
+                        y += velocidad; // Gira hacia el Sur
+                    } else {
+                        x += velocidad; // Sigue derecho al Este
+                    }
                     break;
             }
         }
@@ -84,4 +103,11 @@ public class Carro
         this.estado = estado;
     }
     
+    public String getDireccion() { 
+        return direccion; 
+    }
+    
+    public void setDireccion(String direccion) { 
+        this.direccion = direccion; 
+    }
 }

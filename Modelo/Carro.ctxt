@@ -1,14 +1,18 @@
 #BlueJ class context
 comment0.target=Carro
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Carro\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=x\ y\ velocidad\ caminoId
-comment1.target=Carro(int,\ int,\ int,\ int)
+comment1.params=x\ y\ velocidad\ caminoId\ direccion
+comment1.target=Carro(int,\ int,\ int,\ int,\ java.lang.String)
 comment10.params=caminoId
 comment10.target=void\ setCaminoId(int)
 comment11.params=
 comment11.target=java.lang.String\ getEstado()
 comment12.params=estado
 comment12.target=void\ setEstado(java.lang.String)
+comment13.params=
+comment13.target=java.lang.String\ getDireccion()
+comment14.params=direccion
+comment14.target=void\ setDireccion(java.lang.String)
 comment2.params=
 comment2.target=void\ avanzar()
 comment3.params=
@@ -25,4 +29,4 @@ comment8.params=velocidad
 comment8.target=void\ setVelocidad(int)
 comment9.params=
 comment9.target=int\ getCaminoId()
-numComments=13
+numComments=15

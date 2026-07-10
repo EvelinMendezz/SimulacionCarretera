@@ -27,8 +27,8 @@ public class PanelCarretera extends JPanel
         coloresSemaforos = new String[]{"ROJO", "ROJO", "ROJO", "ROJO"};
         coordenadasCarros = new ArrayList<>();
         
-        imgFondo = new ImageIcon("Imagenes/fondo_carretera.png").getImage();
-        imgCarro = new ImageIcon("Imagenes/carrito.png").getImage();
+        imgFondo = new ImageIcon("Imagenes/fondo_carretera3.png").getImage();
+        imgCarro = new ImageIcon("Imagenes/carrito3.png").getImage();
     }
     
 
@@ -50,30 +50,37 @@ public class PanelCarretera extends JPanel
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         
-        // 1. dibuja el mapa en base a la imagen
+        // mapa en base a la imagen
         g.drawImage(imgFondo, 0, 0, 800, 800, this);
 
         // Semaforos
         // Camino 1 (Norte)
-        g.setColor(coloresSemaforos[0].equals("VERDE") ? Color.GREEN : Color.RED);
-        g.fillOval(240, 240, 50, 50); 
+        if (coloresSemaforos[0].equals("VERDE")) g.setColor(Color.GREEN);
+        else if (coloresSemaforos[0].equals("AMARILLO")) g.setColor(Color.YELLOW);
+        else g.setColor(Color.RED);
+        g.fillOval(240, 240, 50, 50);
         
         // Camino 2 (Este)
-        g.setColor(coloresSemaforos[1].equals("VERDE") ? Color.GREEN : Color.RED);
+        if (coloresSemaforos[1].equals("VERDE")) g.setColor(Color.GREEN);
+        else if (coloresSemaforos[1].equals("AMARILLO")) g.setColor(Color.YELLOW);
+        else g.setColor(Color.RED);
         g.fillOval(510, 240, 50, 50); 
         
         // Camino 3 (Sur)
-        g.setColor(coloresSemaforos[2].equals("VERDE") ? Color.GREEN : Color.RED);
-        g.fillOval(510, 510, 50, 50); 
+        if (coloresSemaforos[2].equals("VERDE")) g.setColor(Color.GREEN);
+        else if (coloresSemaforos[2].equals("AMARILLO")) g.setColor(Color.YELLOW);
+        else g.setColor(Color.RED);
+        g.fillOval(510, 510, 50, 50);
         
         // Camino 4 (Oeste)
-        g.setColor(coloresSemaforos[3].equals("VERDE") ? Color.GREEN : Color.RED);
-        g.fillOval(240, 510, 50, 50); 
+        if (coloresSemaforos[3].equals("VERDE")) g.setColor(Color.GREEN);
+        else if (coloresSemaforos[3].equals("AMARILLO")) g.setColor(Color.YELLOW);
+        else g.setColor(Color.RED);
+        g.fillOval(240, 510, 50, 50);
 
-        // 3. colocando los carros
+        // colocarcarros
         if (coordenadasCarros != null) {
             for (int[] coord : coordenadasCarros) {
-                
                 g.drawImage(imgCarro, coord[0], coord[1], 40, 40, this); 
             }
         }

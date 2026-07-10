@@ -1,6 +1,6 @@
 package Vista;
 import javax.swing.JFrame;
-
+import java.awt.BorderLayout;
 
 /**
  * Write a description of class VentanaPrincipal here.
@@ -22,7 +22,8 @@ public class VentanaPrincipal extends JFrame
         this.setResizable(false); 
         this.setLocationRelativeTo(null);
 
-        //Inicializa el panel y agrega a la ventana principal
+        this.setLayout(new BorderLayout());
+        
         panelCarretera = new PanelCarretera();
         this.add(panelCarretera);
         

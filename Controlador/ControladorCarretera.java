@@ -9,7 +9,7 @@ package Controlador;
  */
 import Modelo.Carretera;
 import Modelo.Carro;
-import Vista.VentanaPrincipal;
+import Vista.VentanaPrincipal; 
 
 public class ControladorCarretera
 {

@@ -90,7 +90,7 @@ public class PanelCarretera extends JPanel
         // colocarcarros
         if (coordenadasCarros != null) {
             for (int[] coord : coordenadasCarros) {
-                g.drawImage(imgCarro, coord[0], coord[1], 40, 40, this); 
+                g.drawImage(imgCarro, coord[0], coord[1], 40, 40, this);
             }
         }
     }

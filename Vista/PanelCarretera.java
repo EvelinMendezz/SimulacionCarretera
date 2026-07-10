@@ -29,6 +29,7 @@ public class PanelCarretera extends JPanel
         
         imgFondo = new ImageIcon("Imagenes/fondo_carretera3.png").getImage();
         imgCarro = new ImageIcon("Imagenes/carrito3.png").getImage();
+        
     }
     
 
@@ -55,28 +56,36 @@ public class PanelCarretera extends JPanel
 
         // Semaforos
         // Camino 1 (Norte)
+        g.setColor(Color.DARK_GRAY);
+        g.fillRect(250, 250, 65, 45); // Cajita gris de 30x30
         if (coloresSemaforos[0].equals("VERDE")) g.setColor(Color.GREEN);
         else if (coloresSemaforos[0].equals("AMARILLO")) g.setColor(Color.YELLOW);
         else g.setColor(Color.RED);
-        g.fillOval(240, 240, 50, 50);
+        g.fillOval(260, 255, 35, 35);
         
         // Camino 2 (Este)
+        g.setColor(Color.DARK_GRAY);
+        g.fillRect(520, 250, 45, 65);
         if (coloresSemaforos[1].equals("VERDE")) g.setColor(Color.GREEN);
         else if (coloresSemaforos[1].equals("AMARILLO")) g.setColor(Color.YELLOW);
         else g.setColor(Color.RED);
-        g.fillOval(510, 240, 50, 50); 
+        g.fillOval(525, 260, 35, 35); 
         
         // Camino 3 (Sur)
+        g.setColor(Color.DARK_GRAY);
+        g.fillRect(500, 520, 65, 45);
         if (coloresSemaforos[2].equals("VERDE")) g.setColor(Color.GREEN);
         else if (coloresSemaforos[2].equals("AMARILLO")) g.setColor(Color.YELLOW);
         else g.setColor(Color.RED);
-        g.fillOval(510, 510, 50, 50);
+        g.fillOval(520, 525, 35, 35); 
         
         // Camino 4 (Oeste)
+        g.setColor(Color.DARK_GRAY);
+        g.fillRect(250, 500, 45, 65);
         if (coloresSemaforos[3].equals("VERDE")) g.setColor(Color.GREEN);
         else if (coloresSemaforos[3].equals("AMARILLO")) g.setColor(Color.YELLOW);
         else g.setColor(Color.RED);
-        g.fillOval(240, 510, 50, 50);
+        g.fillOval(255, 508, 35, 35);
 
         // colocarcarros
         if (coordenadasCarros != null) {

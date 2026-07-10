@@ -19,10 +19,11 @@ public class VentanaPrincipal extends JFrame
         this.setSize(800, 800);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        this.setResizable(false); 
+        this.setResizable(true); 
         this.setLocationRelativeTo(null);
 
         this.setLayout(new BorderLayout());
+        
         
         panelCarretera = new PanelCarretera();
         this.add(panelCarretera);

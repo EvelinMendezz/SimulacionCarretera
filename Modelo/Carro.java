@@ -40,7 +40,7 @@ public class Carro
                 case 2: // Viene del Este, va hacia el Oeste
                     if (direccion.equals("DERECHA") && x <= 430) {
                         y -= velocidad; // Gira hacia el Norte
-                    } else {
+                    } else { 
                         x -= velocidad; // Sigue derecho al Oeste
                     }
                     break;
